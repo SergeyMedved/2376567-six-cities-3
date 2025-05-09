@@ -1,6 +1,6 @@
-// import CardComponent from './card';
+import CardComponent from './card';
 import { PlacesComponentProps } from '../types';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 type SortOption = {
   value: string;
@@ -41,15 +41,17 @@ function renderSortOption (sortItem:SortOption):JSX.Element {
 }
 
 export default function PlacesComponent({placeCardsData}:PlacesComponentProps):JSX.Element {
-  // const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  // eslint-disable-next-line no-console
+  console.log(activeCardId);
   const numberOfPlaces = placeCardsData.length;
-  // const handleCardMouseEnter = (id: string) => {
-  //   setActiveCardId(id);
-  // };
+  const handleCardMouseEnter = (id: string) => {
+    setActiveCardId(id);
+  };
 
-  // const handleCardMouseLeave = () => {
-  //   setActiveCardId(null);
-  // };
+  const handleCardMouseLeave = () => {
+    setActiveCardId(null);
+  };
   return (
     <section className="cities__places places">
       <h2 className="visually-hidden">Places</h2>
@@ -70,7 +72,7 @@ export default function PlacesComponent({placeCardsData}:PlacesComponentProps):J
       </form>
       <div className="cities__places-list places__list tabs__content">
 
-        {/* {placeCardsData.map((card) => <CardComponent key={card.id} card={card} onMouseEnter={handleCardMouseEnter} onMouseLeave={handleCardMouseLeave} />)} */}
+        {placeCardsData.map((card) => <CardComponent key={card.id} card={card} onMouseEnter={handleCardMouseEnter} onMouseLeave={handleCardMouseLeave} />)}
 
       </div>
     </section>

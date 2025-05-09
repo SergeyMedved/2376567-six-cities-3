@@ -10,7 +10,7 @@ import PrivateRoute from './private-route';
 import { OfferPage } from '../pages/offer';
 
 function App({ placeCardsData }: AppScreenProps): JSX.Element {
-  const isAuth = false;
+  const isAuth = true;
   return (
     <BrowserRouter>
       <Routes>

@@ -5,6 +5,8 @@ import { generateMockData } from './mock/mocks';
 
 const data = (generateMockData(10));
 
+console.log(data);
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
